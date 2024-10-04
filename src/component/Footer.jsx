@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
+import logo from '../assets/barterstyle-logo.svg';
 
 const Footer = () => {
   return (
@@ -11,7 +12,7 @@ const Footer = () => {
           {/* Logo and Description */}
           <Col md={4}>
             <h5>
-              <img src="../assets/barterstyle-logo.svg" alt="BarterStyle Logo" style={{ height: '50px', marginRight: '10px' }} />
+              <img src={logo} alt="BarterStyle Logo" style={{ height: '50px', marginRight: '10px' }} />
             </h5>
             <p>
               Sebuah platform yang mengajak Anda untuk berpartisipasi dalam revolusi fashion berkelanjutan. 
