@@ -1,5 +1,11 @@
-import React from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Link,
+  Navigate,
+} from "react-router-dom";
 import WeatherDashboard from "./component/WeatherDashboard";
 import WeatherDetails from "./component/WeatherDetails";
 import WeeklyForecast from "./component/WeeklyForecast";
@@ -9,8 +15,26 @@ import { Container, Navbar, Nav, Image, Button } from "react-bootstrap";
 import logo from "./assets/barterstyle-logo.svg";
 import "bootstrap/dist/css/bootstrap.min.css";
 import styles from "./module/Navbar.module.css";
+import LoginPage from "./component/LoginPage";
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const loggedInStatus = localStorage.getItem("isLoggedIn");
+    setIsLoggedIn(loggedInStatus === "true");
+  }, []);
+
+  const handleLogin = () => {
+    localStorage.setItem("isLoggedIn", "true");
+    setIsLoggedIn(true);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem("isLoggedIn");
+    setIsLoggedIn(false);
+  };
+
   return (
     <Router>
       <Navbar expand="lg" className={styles.navbar}>
@@ -42,19 +66,42 @@ function App() {
                 Outfit Recommendation
               </Nav.Link>
             </Nav>
-            <Button className={styles.logoutButton}>Logout</Button>
+            {isLoggedIn ? (
+              <Button className={styles.logoutButton} onClick={handleLogout}>
+                Logout
+              </Button>
+            ) : null}
           </Navbar.Collapse>
         </Container>
       </Navbar>
 
-      <Container>
+      <Container className={styles.containerContent}>
         <Routes>
-          <Route path="/" element={<WeatherDashboard />} />
-          <Route path="/details" element={<WeatherDetails />} />
-          <Route path="/weekly-forecast" element={<WeeklyForecast />} />
+          {/* Jika belum login, arahkan ke halaman login */}
+          <Route
+            path="/"
+            element={
+              isLoggedIn ? <WeatherDashboard /> : <Navigate to="/login" />
+            }
+          />
+          <Route
+            path="/details"
+            element={isLoggedIn ? <WeatherDetails /> : <Navigate to="/login" />}
+          />
+          <Route
+            path="/weekly-forecast"
+            element={isLoggedIn ? <WeeklyForecast /> : <Navigate to="/login" />}
+          />
           <Route
             path="/outfit-recommendation"
-            element={<OutfitRecommendation />}
+            element={
+              isLoggedIn ? <OutfitRecommendation /> : <Navigate to="/login" />
+            }
+          />
+          {/* Halaman login */}
+          <Route
+            path="/login"
+            element={<LoginPage handleLogin={handleLogin} />}
           />
         </Routes>
       </Container>

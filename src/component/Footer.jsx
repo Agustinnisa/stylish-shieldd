@@ -1,73 +1,59 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { Link } from "react-router-dom";
-import { FaFacebook, FaInstagram, FaYoutube } from "react-icons/fa";
-import logo from '../assets/barterstyle-logo.svg';
+import styles from "../module/Footer.module.css";
+import logo from "../assets/barterstyle-logo.svg";
+import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa"; 
 
-const Footer = () => {
+function Footer() {
   return (
-    <footer className="bg-light py-4">
-      <Container>
-        <Row>
-          {/* Logo and Description */}
-          <Col md={4}>
-            <h5>
-              <img src={logo} alt="BarterStyle Logo" style={{ height: '50px', marginRight: '10px' }} />
-            </h5>
+    <>
+      <footer className={styles.footer}>
+        <div className={styles.footerColumn}>
+          <div className={styles.footerLogo}>
+            <img src={logo} alt="BarterStyle Logo" />
             <p>
-              Sebuah platform yang mengajak Anda untuk berpartisipasi dalam revolusi fashion berkelanjutan. 
-              Dengan BarterStyle, Anda dapat memperpanjang umur pakai pakaian Anda, mengurangi limbah fashion, 
+              Sebuah platform yang mengajak Anda untuk berpartisipasi dalam
+              revolusi fashion berkelanjutan. Dengan BarterStyle, Anda dapat
+              memperpanjang umur pakai pakaian Anda, mengurangi limbah fashion,
               dan menemukan gaya baru yang unik.
             </p>
-            <p>
-              <a href="mailto:info@barterstyle.com">info@barterstyle.com</a>
-            </p>
-          </Col>
+          </div>
+          <a href="mailto:info@barterstyle.com">info@barterstyle.com</a>
+        </div>
 
-          {/* Site Links */}
-          <Col md={4}>
-            <h5>Site Link</h5>
-            <ul className="list-unstyled">
-              <li>
-                <Link to="/home">Home</Link>
-              </li>
-              <li>
-                <Link to="/about">About</Link>
-              </li>
-              <li>
-                <Link to="/event">Event</Link>
-              </li>
-              <li>
-                <Link to="/donasi">Donasi</Link>
-              </li>
-            </ul>
-          </Col>
+        {/* Site Links */}
+        <div className={styles.footerColumn}>
+          <h5>Site Link</h5>
+          <div className={styles.footerLinks}>
+            <a href="/home">Home</a>
+            <a href="/about">About</a>
+            <a href="/event">Event</a>
+            <a href="/donasi">Donasi</a>
+          </div>
+        </div>
 
-          {/* Social Media */}
-          <Col md={4}>
-            <h5>Sosial Media</h5>
-            <div className="d-flex">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="mr-3">
-                <FaFacebook size={30} />
-              </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="mr-3">
-                <FaInstagram size={30} />
-              </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-                <FaYoutube size={30} />
-              </a>
-            </div>
-          </Col>
-        </Row>
+        {/* Social Media Icons */}
+        <div className={styles.footerColumn}>
+          <h5>Sosial Media</h5>
+          <div className={styles.socialMediaIcons}>
+            <a href="https://facebook.com" aria-label="Facebook">
+              <FaFacebookF size={30} />
+            </a>
+            <a href="https://instagram.com" aria-label="Instagram">
+              <FaInstagram size={30} />
+            </a>
+            <a href="https://youtube.com" aria-label="YouTube">
+              <FaYoutube size={30} />
+            </a>
+          </div>
+        </div>
+      </footer>
 
-        <Row className="mt-4">
-          <Col className="text-center">
-            <p>© BarterStyle 2024 all right reserved by Fatmawati</p>
-          </Col>
-        </Row>
-      </Container>
-    </footer>
+      {/* Footer Bottom Section */}
+      <div className={styles.footerBottom}>
+        <p>&copy; BarterStyle 2024 all rights reserved by Fatmawati</p>
+      </div>
+    </>
   );
-};
+}
 
 export default Footer;

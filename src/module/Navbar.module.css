@@ -5,8 +5,9 @@
     background-color: whitesmoke !important;
     box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
     padding: 25px 20px;
-    height: 100px;
+    height: auto;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
 }
 
 .logo {
@@ -20,6 +21,7 @@
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .navLink {
@@ -48,4 +50,8 @@
 
 .logoutButton:hover {
     background-color: #48cfcb;
+}
+
+.containerContent {
+    padding-top: 30px;
 }
