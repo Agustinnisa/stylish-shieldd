@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { Table, Spinner } from 'react-bootstrap';
+import { Table, Spinner, Container } from 'react-bootstrap';
+import styles from "../module/WeeklyForecast.module.css";
 
 function WeeklyForecast() {
   const [forecast, setForecast] = useState(null);
@@ -16,9 +17,9 @@ function WeeklyForecast() {
   }
 
   return (
-    <div>
-      <h1>Weekly Forecast</h1>
-      <Table striped bordered hover>
+    <Container className={styles.container}>
+      <h1 className={styles.title}>Weekly Forecast</h1>
+      <Table striped bordered hover className={styles.forecastTable}>
         <thead>
           <tr>
             <th>Day</th>
@@ -36,7 +37,7 @@ function WeeklyForecast() {
           ))}
         </tbody>
       </Table>
-    </div>
+    </Container>
   );
 }
 

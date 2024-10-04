@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Table, Container } from "react-bootstrap";
+import styles from "../module/Details.module.css";
 
 const WeatherDetails = () => {
   const [hourlyWeather, setHourlyWeather] = useState([]);
@@ -21,7 +22,7 @@ const WeatherDetails = () => {
       .catch((error) => console.error("Error fetching weather data:", error));
   }, []);
 
-  // Fungsi untuk memberikan rekomendasi pakaian berdasarkan cuaca
+  // Fungsi untuk memberikan rekomendasi pakaian 
   const getRecommendation = (temp, rainProbability) => {
     if (rainProbability > 50) {
       return "Wear raincoat!";
@@ -35,9 +36,9 @@ const WeatherDetails = () => {
   };
 
   return (
-    <Container>
-      <h2>Hourly Weather</h2>
-      <Table striped bordered hover responsive>
+    <Container className={styles.container}>
+      <h2 className={styles.title}>Hourly Weather</h2>
+      <Table className={styles.weatherTable} striped bordered hover responsive>
         <thead>
           <tr>
             <th>Hour</th>

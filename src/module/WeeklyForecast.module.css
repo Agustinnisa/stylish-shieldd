@@ -1,0 +1,44 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+.container {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.forecastTable {
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.forecastTable th {
+  background-color: #466381;
+  color: white;
+  font-weight: bold;
+  padding: 12px;
+}
+
+.forecastTable td {
+  padding: 12px;
+  text-align: center;
+  border: 1px solid #dee2e6;
+}
+
+.forecastTable tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.forecastTable tr:hover {
+  background-color: #e9ecef;
+}
