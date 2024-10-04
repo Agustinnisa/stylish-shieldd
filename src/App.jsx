@@ -63,7 +63,7 @@ function App() {
                 to="/outfit-recommendation"
                 className={styles.navLink}
               >
-                Outfit Recommendation
+                Recommendation
               </Nav.Link>
             </Nav>
             {isLoggedIn ? (
