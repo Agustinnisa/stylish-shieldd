@@ -1,0 +1,103 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+.container {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px;
+  padding: 50px;
+  max-width: 800px;
+  margin: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #f9f9f9;
+}
+
+.weatherInfoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 50px;
+}
+
+.cloudImage {
+  max-width: 220px;
+  margin-right: 40px;
+}
+
+.cardTitle {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+  /* width: 100%; */
+}
+
+.cardText {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.buttonPrimary,
+.buttonSecondary,
+.buttonSuccess {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1em;
+  color: white;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s;
+}
+
+.buttonPrimary {
+  background-color: #427898;
+}
+
+.buttonPrimary:hover {
+  background-color: #48cfcb;
+}
+
+.buttonSecondary {
+  background-color: #427898;
+}
+
+.buttonSecondary:hover {
+  background-color: #48cfcb;
+}
+
+.buttonSuccess {
+  background-color: #427898;
+}
+
+.buttonSuccess:hover {
+  background-color: #48cfcb;
+}
+
+@media (max-width: 768px) {
+  .weatherInfoContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cloudImage {
+    margin-right: 0;
+    margin-bottom: 20px;
+    max-width: 150px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
