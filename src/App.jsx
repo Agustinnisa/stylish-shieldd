@@ -4,7 +4,8 @@ import WeatherDashboard from './component/WeatherDashboard';
 import WeatherDetails from './component/WeatherDetails';
 import WeeklyForecast from './component/WeeklyForecast';
 import OutfitRecommendation from './component/OutfitRecommendation';
-import { Container, Navbar, Nav, Image, Footer } from 'react-bootstrap';
+import Footer from './component/Footer';
+import { Container, Navbar, Nav, Image } from 'react-bootstrap';
 import logo from './assets/barterstyle-logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
