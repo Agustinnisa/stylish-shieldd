@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "../module/Footer.module.css";
 import logo from "../assets/barterstyle-logo.svg";
-import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa"; 
+import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
 
 function Footer() {
   return (
@@ -17,7 +17,7 @@ function Footer() {
               dan menemukan gaya baru yang unik.
             </p>
           </div>
-          <a href="mailto:info@barterstyle.com">info@barterstyle.com</a>
+          <a href="mailto:info@barterstyle.com" className={styles.contactLink}>info@barterstyle.com</a>
         </div>
 
         {/* Site Links */}
